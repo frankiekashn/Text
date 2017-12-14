@@ -1,0 +1,10 @@
+C:\Apps\Text\UITests\bin\Debug\TextSample.UITests.dll
+C:\Apps\Text\UITests\bin\Debug\TextSample.UITests.pdb
+C:\Apps\Text\UITests\bin\Debug\nunit.framework.dll
+C:\Apps\Text\UITests\bin\Debug\Xamarin.UITest.dll
+C:\Apps\Text\UITests\bin\Debug\nunit.framework.xml
+C:\Apps\Text\UITests\bin\Debug\Xamarin.UITest.xml
+C:\Apps\Text\UITests\obj\Debug\TextSample.UITests.csprojResolveAssemblyReference.cache
+C:\Apps\Text\UITests\obj\Debug\TextSample.UITests.csproj.CoreCompileInputs.cache
+C:\Apps\Text\UITests\obj\Debug\TextSample.UITests.dll
+C:\Apps\Text\UITests\obj\Debug\TextSample.UITests.pdb
