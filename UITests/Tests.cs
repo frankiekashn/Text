@@ -7,7 +7,6 @@ using Xamarin.UITest.Queries;
 
 namespace TextSample.UITests
 {
-	[TestFixture (Platform.Android)]
 	[TestFixture (Platform.iOS)]
 	public class Tests
 	{
@@ -22,17 +21,33 @@ namespace TextSample.UITests
 		[SetUp]
 		public void BeforeEachTest ()
 		{
-			app = AppInitializer.StartApp (platform);
+			app = AppInitializer.StartApp(platform);
 		}
 
 		[Test]
 		public void WelcomeTextIsDisplayed ()
 		{
-			AppResult[] results = app.WaitForElement (c => c.Marked ("Welcome to Xamarin Forms!"));
-			app.Screenshot ("Welcome screen.");
-
-			Assert.IsTrue (results.Any ());
+			app.WaitForElement(ListPage.DemoTitle);
+			AppResult[] results1 = app.WaitForElement(ListPage.EditorDemoXAML);
+			AppResult[] results2 = app.WaitForElement(ListPage.EditorDemoCode);
+			app.Screenshot ("Main View");
+			Assert.IsTrue (results1.Any() && results2.Any());
 		}
 	}
+
+	public class ListPage
+	{
+		public static readonly Func<AppQuery, AppQuery> DemoTitle = c => c.Marked("Text Demo").Class("TextSample.ListPage");
+		public static readonly Func<AppQuery, AppQuery> EditorDemoXAML = c => c.Class("TextSample.EditorPage").Marked("Editor Demo - XAML");
+		public static readonly Func<AppQuery, AppQuery> EditorDemoCode = c => c.Class("TextSample.EditorPage").Marked("Editor Demo - Code");
+	}
+
+	public class ListItem
+	{
+		static string Title { get; set; }
+		static string ItemClass { get; set; }
+		Func<AppQuery, AppQuery> MobileItem = c => c.Class(ItemClass).Marked(Title);
+	}
+
 }
 
